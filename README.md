@@ -1,10 +1,9 @@
 # Panduan Lengkap: Mengatasi Disk Space Penuh pada 0G Storage Node
+# og storage disk cleanup guide
 
-## 🚨 **MASALAH AWAL**
+## 🚨 **MISAL DATA NYA SEKITAR 317 GB**
 - Server mengalami disk space penuh (85-90% usage)
 - 0G Storage Node memakan space besar (~371GB di folder data_db)
-- Berbagai container Docker dan services terdampak
-- Perlu solusi untuk mengosongkan space tanpa merusak data penting
 
 ## 🔍 **DIAGNOSIS MASALAH**
 
@@ -16,7 +15,7 @@ df -h
 # Cek ukuran folder 0G Storage Node
 du -sh /root/0g-storage-node/run/db/*
 
-# Hasil yang ditemukan:
+# Hasil yang ditemukan misal:
 # 371G /root/0g-storage-node/run/db/data_db
 # 317M /root/0g-storage-node/run/db/flow_db
 ```
@@ -31,8 +30,6 @@ ls -la /root/0g-storage-node/run/db/
 ```
 
 ## ✅ **KONFIRMASI RESMI DARI TIM 0G**
-
-**PERTANYAAN KE TIM:** "Can I delete some file or what to do?"
 
 **JAWABAN RESMI TIM 0G:**
 - ✅ **BOLEH DIHAPUS:** `data_db` folder (371GB)
@@ -160,7 +157,7 @@ df -h
 
 ## ⚠️ **PERINGATAN PENTING**
 
-### YANG BOLEH DIHAPUS:
+### YANG BOLEH DIHAPUS misalnya:
 - ✅ `data_db` folder (371GB)
 
 ### YANG JANGAN DIHAPUS:
@@ -173,19 +170,6 @@ df -h
 2. **STOP service dulu** sebelum menghapus folder
 3. **VERIFIKASI nama folder** sebelum rm -rf
 4. **COBA di testnet dulu** jika memungkinkan
-
-## 🎯 **KESIMPULAN**
-
-Prosedur ini **AMAN dan DIREKOMENDASIKAN** oleh tim 0G untuk:
-- Mengosongkan disk space yang penuh
-- Mengatasi masalah storage tanpa kehilangan data penting
-- Mempertahankan kemampuan mining normal
-
-**HASIL AKHIR:** Server kembali sehat dengan 353GB available space dan node berjalan normal.
-
----
-
-## 📞 **REFERENSI KONFIRMASI**
 
 Prosedur ini dikonfirmasi langsung oleh **Tim 0G Official** dengan pertanyaan:
 - **Q:** "Can I delete some file or what to do?"
