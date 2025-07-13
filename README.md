@@ -1,5 +1,5 @@
 # Panduan Lengkap: Mengatasi Disk Space Penuh pada 0G Storage Node
-# og storage disk cleanup guide
+# OG-storage disk cleanup guides
 
 ## 🚨 **MISAL DATA NYA SEKITAR 317 GB**
 - Server mengalami disk space penuh (85-90% usage)
