@@ -7,11 +7,9 @@
 
 ## 🔍 **DIAGNOSIS MASALAH**
 
-### 1. Cek Penggunaan Disk
-```bash
-# Cek overall disk usage
+### 1. Cek Penggunaan Disk memori
+```basah
 df -h
-
 # Cek ukuran folder 0G Storage Node
 du -sh /root/0g-storage-node/run/db/*
 
@@ -76,7 +74,6 @@ du -sh /root/0g-storage-node/run/db/flow_db
 ### LANGKAH 4: Penghapusan Folder data_db
 
 ```bash
-# EKSEKUSI PENGHAPUSAN
 rm -rf /root/0g-storage-node/run/db/data_db
 
 # JANGAN SAMPAI SALAH KETIK!
@@ -89,12 +86,7 @@ rm -rf /root/0g-storage-node/run/db/data_db
 ```bash
 ls -la /root/0g-storage-node/run/db/
 # Harus hanya ada flow_db saja
-
-# 2. Cek disk space yang sudah kosong
-df -h
-# storage memori server harus bertambah
-
-# 3. Pastikan flow_db masih ada dan utuh
+# Pastikan flow_db masih ada dan utuh
 du -sh /root/0g-storage-node/run/db/flow_db
 ```
 
@@ -103,7 +95,6 @@ du -sh /root/0g-storage-node/run/db/flow_db
 ```bash
 sudo systemctl start zgs
 sudo systemctl status zgs
-# Verifikasi node berjalan normal
 ps aux | grep zgs
 ```
 
